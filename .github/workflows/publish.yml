@@ -26,19 +26,19 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Build and push the Docker image
+      # Build and push the Docker image with caching
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          # Path to the Dockerfile
           context: .
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
             ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
-          # Enable multi-platform build (optional)
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           platforms: linux/amd64,linux/arm64
 
-      # Optional: Log out from the registry
+      # Optional: Log out from GHCR
       - name: Log out from GHCR
         run: docker logout ghcr.io

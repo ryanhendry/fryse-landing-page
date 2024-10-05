@@ -1,23 +1,22 @@
 # Stage 1: Build Stage
-FROM node:18-bullseye AS build
+FROM node:18-alpine AS build
 
 # Install Ruby and Bundler
-RUN apt-get update && apt-get install -y \
-    ruby-full \
-    build-essential \
-    && gem install bundler
+RUN apk add --no-cache ruby ruby-dev build-base && \
+    gem install bundler
 
 # Set the working directory
 WORKDIR /app
 
-# Copy the project files
-COPY . .
-
-# Install Node.js dependencies
+# Copy dependency files first (leverage caching)
+COPY package*.json ./
 RUN npm install
 
-# Install Ruby gems
+COPY Gemfile Gemfile.lock ./
 RUN bundler install
+
+# Copy the rest of the application code
+COPY . .
 
 # Build the project
 RUN npm run build
