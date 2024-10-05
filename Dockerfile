@@ -2,17 +2,17 @@
 FROM node:18-bullseye AS build
 
 # Install required packages
-RUN apk add --no-cache \
-    ruby=~3.2 \
-    ruby-dev=~3.2 \
-    build-base \
-    autoconf \
-    automake \
-    libtool \
-    pkgconfig \
-    nasm \
-    zlib-dev \
-    && gem install bundler
+RUN apt-get update && apt-get install -y \
+ruby \
+ruby-dev \
+build-essential \
+autoconf \
+automake \
+libtool \
+pkg-config \
+nasm \
+zlib1g-dev \
+&& gem install bundler
 
 # Set the working directory
 WORKDIR /app
