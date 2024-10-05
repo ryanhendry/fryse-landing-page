@@ -1,18 +1,30 @@
 # Stage 1: Build Stage
 FROM node:18-alpine AS build
 
-# Install Ruby and Bundler
-RUN apk add --no-cache ruby ruby-dev build-base && \
-    gem install bundler
+# Install required packages
+RUN apk add --no-cache \
+    ruby \
+    ruby-dev \
+    build-base \
+    autoconf \
+    automake \
+    libtool \
+    pkgconfig \
+    nasm \
+    zlib-dev \
+    && gem install bundler
 
 # Set the working directory
 WORKDIR /app
 
 # Copy dependency files first (leverage caching)
 COPY package*.json ./
+COPY Gemfile Gemfile.lock ./
+
+# Install Node.js dependencies
 RUN npm install
 
-COPY Gemfile Gemfile.lock ./
+# Install Ruby gems
 RUN bundler install
 
 # Copy the rest of the application code
