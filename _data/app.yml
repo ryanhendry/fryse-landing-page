@@ -1,21 +1,12 @@
-name: Mobile App Name
-description: A super tagline for the mobile app
-full_description: 'A more complete description of the mobile app<br>
-<br>With a lot of features:
-<br>- Feature 1
-<br>- Feature 2
-<br>- Feature 3'
+name: Fryse
+description: Freshness at your fingertips—never waste food again!
+full_description: 'Fryse is your ultimate food management app, designed to keep your kitchen organized and reduce food waste. With Fryse, you can easily add food items to your inventory manually, by snapping a picture using AI-powered recognition, or by scanning receipts. Fryse tracks all your items—whether they’re fresh groceries or leftovers—and notifies you before they expire.<br><br>Tired of figuring out what to cook? Fryse analyzes your ingredients and generates personalized recipe ideas, helping you make the most of what’s in your fridge, freezer, or pantry. Plus, you can effortlessly add and manage your leftovers, so no meal goes to waste.<br>'
 android: https://telegra.ph/Replace-this-link-07-23
-iOS: https://telegra.ph/Replace-this-link-07-23
-web: https://telegra.ph/Replace-this-link-07-23
+iOS: false
+web: false
 screenshots:
   - 1.png
   - 2.png
   - 3.png
   - 4.png
-producthunt: https://telegra.ph/Replace-this-link-07-23
-companies:
-  - url: https://telegra.ph/Replace-this-link-07-23
-    image: androidpolice.png
-  - url: https://telegra.ph/Replace-this-link-07-23
-    image: producthunt.png
+producthunt: false
