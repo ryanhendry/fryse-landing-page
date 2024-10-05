@@ -1,5 +1,5 @@
 # Stage 1: Build Stage
-FROM node:18-alpine AS build
+FROM node:18-bullseye AS build
 
 # Install required packages
 RUN apk add --no-cache \
