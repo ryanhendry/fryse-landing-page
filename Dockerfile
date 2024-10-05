@@ -12,6 +12,7 @@ libtool \
 pkg-config \
 nasm \
 zlib1g-dev \
+libpng-dev \
 && gem install bundler
 
 # Set the working directory
@@ -22,7 +23,7 @@ COPY package*.json ./
 COPY Gemfile ./
 
 # Install Node.js dependencies
-RUN npm install
+RUN npm ci
 
 # Install Ruby gems
 RUN bundler install
