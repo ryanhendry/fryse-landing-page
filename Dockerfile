@@ -3,8 +3,8 @@ FROM node:18-alpine AS build
 
 # Install required packages
 RUN apk add --no-cache \
-    ruby \
-    ruby-dev \
+    ruby3.2 \
+    ruby3.2-dev \
     build-base \
     autoconf \
     automake \
