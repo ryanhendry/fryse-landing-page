@@ -35,13 +35,19 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Production Stage
-FROM nginx:alpine
+FROM node:18-alpine
 
-# Copy the built assets to Nginx's default directory
-COPY --from=build /app/assets /usr/share/nginx/html
+# Install http-server globally
+RUN npm install -g http-server
 
-# Expose port 80
-EXPOSE 80
+# Set the working directory in the final image
+WORKDIR /app
 
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Copy the built static files from the build stage
+COPY --from=build /app/assets /app
+
+# Expose the port that http-server will run on
+EXPOSE 8080
+
+# Start http-server to serve your static files
+CMD ["http-server", "/app", "-p", "8080"]
