@@ -5,13 +5,13 @@
 
 title: Fryse - Smart Kitchen Manager
 email: support@shogunsoftware.co.uk
-description: Free to use static landing page template to showcase your mobile app
+description: Fryse is your ultimate food management app, designed to keep your kitchen organized and reduce food waste.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://mobileapplandingpage.learn.uno" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://fryse.ai" # the base hostname & protocol for your site, e.g. http://example.com
 theme_color: '#efeeff'
-twitter_username: sandochee
-github_username:  sandoche
-author: Sandoche Adittane
+twitter_username: ryanhendry__
+github_username:  ryanhendry
+author: Ryan Hendry
 logo: assets/images/large-logo.png
 twitter:
   username: sandochee
