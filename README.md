@@ -12,7 +12,7 @@
 
 📱 Free to use static generated landing page template for your mobile app
 
-## 💡 Features
+## 💡  Features
 Mobile App Landing Page Template comes with pre-installed features and options:
 - Display app icon
 - Show unlimited app screenshots
