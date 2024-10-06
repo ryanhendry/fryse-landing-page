@@ -1,17 +1,17 @@
 # Stage 1: Build Stage
-FROM node:18-bullseye AS build
+FROM node:18-alpine AS build
 
 # Install required packages
-RUN apt-get update && apt-get install -y \
+RUN apk add --no-cache \
 ruby \
 ruby-dev \
-build-essential \
+build-base \
 autoconf \
 automake \
 libtool \
-pkg-config \
+pkgconfig \
 nasm \
-zlib1g-dev \
+zlib-dev \
 libpng-dev \
 && gem install bundler
 
