@@ -23,7 +23,7 @@ COPY package*.json ./
 COPY Gemfile ./
 
 # Install Node.js dependencies
-RUN npm install --build-from-source=false
+RUN npm install --build-from-source=false --loglevel verbose.
 
 # Install Ruby gems
 RUN bundler install
