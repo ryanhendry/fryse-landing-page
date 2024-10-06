@@ -20,7 +20,7 @@ WORKDIR /app
 
 # Copy dependency files first (leverage caching)
 COPY package*.json ./
-COPY Gemfile ./
+COPY Gemfile Gemfile.lock ./
 
 # Install Node.js dependencies
 RUN npm install
